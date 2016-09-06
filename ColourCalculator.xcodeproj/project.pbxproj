@@ -1,0 +1,990 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3A012D291CB95FED0015E7A9 /* CCColorValueTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A012D281CB95FED0015E7A9 /* CCColorValueTableViewCell.m */; };
+		3A0212421D675D750042C9C4 /* CCInstructionPopUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0212411D675D750042C9C4 /* CCInstructionPopUp.m */; };
+		3A11C7D51CB74F960089609E /* CCAdminViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A11C7D41CB74F960089609E /* CCAdminViewController.m */; };
+		3A11C7D81CB7DAC00089609E /* CCParticipantsTestResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A11C7D71CB7DAC00089609E /* CCParticipantsTestResult.m */; };
+		3A174E621D68ED1700054CF6 /* CCEmotion_Test1Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A174E611D68ED1700054CF6 /* CCEmotion_Test1Cell.m */; };
+		3A1CBE1D1CB5C64100BD2CD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A1CBE1F1CB5C64100BD2CD0 /* Main.storyboard */; };
+		3A2A3FAD1CB9091400D8F323 /* CCTestResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2A3FAC1CB9091400D8F323 /* CCTestResultViewController.m */; };
+		3A4E1DCA1D655CCD00B917E0 /* Affdex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A83FD7B1D5B320600148235 /* Affdex.framework */; };
+		3A4E1DCB1D655CCD00B917E0 /* Affdex.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A83FD7B1D5B320600148235 /* Affdex.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3A5970591D32CED800E5A4F7 /* CCHandSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5970581D32CED800E5A4F7 /* CCHandSetViewController.m */; };
+		3A6C2AB21D62ABCA0077BB05 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A6C2AB11D62ABCA0077BB05 /* CoreMedia.framework */; };
+		3A6C2AB41D62ABD40077BB05 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A6C2AB31D62ABD40077BB05 /* AVFoundation.framework */; };
+		3A6C2AB61D62ABE50077BB05 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A6C2AB51D62ABE50077BB05 /* CoreImage.framework */; };
+		3A6C2AB81D62ABFD0077BB05 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A6C2AB71D62ABFD0077BB05 /* SystemConfiguration.framework */; };
+		3A6C2ABA1D62AC080077BB05 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A6C2AB91D62AC080077BB05 /* AssetsLibrary.framework */; };
+		3A6C2ABC1D62AC2C0077BB05 /* libc++.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A6C2ABB1D62AC2C0077BB05 /* libc++.1.tbd */; };
+		3A6C2ABE1D62AC510077BB05 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A6C2ABD1D62AC510077BB05 /* libc++.tbd */; };
+		3A6D19FF1CC3F11E00478389 /* CCTestResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6D19FE1CC3F11E00478389 /* CCTestResultTableViewCell.m */; };
+		3A6DA9AA1CB73B7100B8D777 /* CCReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6DA9A91CB73B7100B8D777 /* CCReportViewController.m */; };
+		3A83FD7C1D5B320600148235 /* Affdex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A83FD7B1D5B320600148235 /* Affdex.framework */; };
+		3A97277F1CCCFFFF006FDF00 /* MPColorTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A97277E1CCCFFFF006FDF00 /* MPColorTools.m */; };
+		3AA763021CB3CE28005CCF76 /* CCCalibrateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA763011CB3CE28005CCF76 /* CCCalibrateViewController.m */; };
+		3AA8751F1D3DCDA100E3CF49 /* CCOutlinedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA8751E1D3DCDA100E3CF49 /* CCOutlinedString.m */; };
+		3AA875221D3F60F200E3CF49 /* CCLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA875211D3F60F200E3CF49 /* CCLabel.m */; };
+		3ABC37F51D5C81D0000D73C7 /* CCCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABC37F41D5C81D0000D73C7 /* CCCameraViewController.m */; };
+		3ADAF0941D34EDB800DEFBA5 /* CCStartTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADAF0931D34EDB800DEFBA5 /* CCStartTestViewController.m */; };
+		3ADAF0971D34FA7400DEFBA5 /* CCRestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADAF0961D34FA7400DEFBA5 /* CCRestViewController.m */; };
+		3ADAF09A1D355FAE00DEFBA5 /* CCFinalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADAF0991D355FAE00DEFBA5 /* CCFinalViewController.m */; };
+		60409B6119AE0E0900C53B38 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60409B6019AE0E0900C53B38 /* Foundation.framework */; };
+		60409B6319AE0E0900C53B38 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60409B6219AE0E0900C53B38 /* CoreGraphics.framework */; };
+		60409B6519AE0E0900C53B38 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60409B6419AE0E0900C53B38 /* UIKit.framework */; };
+		60409B6B19AE0E0900C53B38 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 60409B6919AE0E0900C53B38 /* InfoPlist.strings */; };
+		60409B6D19AE0E0900C53B38 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 60409B6C19AE0E0900C53B38 /* main.m */; };
+		60409B7119AE0E0900C53B38 /* CCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60409B7019AE0E0900C53B38 /* CCAppDelegate.m */; };
+		60409B7919AE0E0A00C53B38 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60409B7819AE0E0A00C53B38 /* Images.xcassets */; };
+		60409B8019AE0E0A00C53B38 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60409B7F19AE0E0A00C53B38 /* XCTest.framework */; };
+		60409B8119AE0E0A00C53B38 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60409B6019AE0E0900C53B38 /* Foundation.framework */; };
+		60409B8219AE0E0A00C53B38 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60409B6419AE0E0900C53B38 /* UIKit.framework */; };
+		60409B8A19AE0E0A00C53B38 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 60409B8819AE0E0A00C53B38 /* InfoPlist.strings */; };
+		60409B8C19AE0E0A00C53B38 /* ColourCalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 60409B8B19AE0E0A00C53B38 /* ColourCalculatorTests.m */; };
+		60409B9819AE0E9500C53B38 /* CCCalculatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60409B9719AE0E9500C53B38 /* CCCalculatorViewController.m */; };
+		60409BEC19AE11C600C53B38 /* nko_brightness_guide.png in Resources */ = {isa = PBXBuildFile; fileRef = 60409BE619AE11C600C53B38 /* nko_brightness_guide.png */; };
+		60409BED19AE11C600C53B38 /* nko_brightness_guide@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60409BE719AE11C600C53B38 /* nko_brightness_guide@2x.png */; };
+		60409BEE19AE11C600C53B38 /* nko_colormap.png in Resources */ = {isa = PBXBuildFile; fileRef = 60409BE819AE11C600C53B38 /* nko_colormap.png */; };
+		60409BEF19AE11C600C53B38 /* NKOColorPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60409BEA19AE11C600C53B38 /* NKOColorPickerView.m */; };
+		6049B68619B8BCCF000E66EA /* CCCalculatorButtonData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6049B68519B8BCCF000E66EA /* CCCalculatorButtonData.m */; };
+		6049B68919B8C080000E66EA /* CCUserDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6049B68819B8C080000E66EA /* CCUserDataManager.m */; };
+		6049B68B19B8C2CE000E66EA /* CalculatorButtonInitialData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6049B68A19B8C2CE000E66EA /* CalculatorButtonInitialData.plist */; };
+		6062CBD319BC238D005A0EF6 /* CCCalculatorNumberData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6062CBD219BC238D005A0EF6 /* CCCalculatorNumberData.m */; };
+		6062CBD619BC295F005A0EF6 /* UIColor+Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = 6062CBD519BC295F005A0EF6 /* UIColor+Extra.m */; };
+		6062CC0B19BCA483005A0EF6 /* _DDDecimalFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6062CBDA19BCA483005A0EF6 /* _DDDecimalFunctions.m */; };
+		6062CC0C19BCA483005A0EF6 /* _DDFunctionEvaluator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6062CBDC19BCA483005A0EF6 /* _DDFunctionEvaluator.m */; };
+		6062CC0D19BCA483005A0EF6 /* _DDFunctionExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 6062CBDE19BCA483005A0EF6 /* _DDFunctionExpression.m */; };
+		6062CC0E19BCA483005A0EF6 /* _DDFunctionTerm.m in Sources */ = {isa = PBXBuildFile; fileRef = 6062CBE019BCA483005A0EF6 /* _DDFunctionTerm.m */; };
+		6062CC0F19BCA483005A0EF6 /* _DDGroupTerm.m in Sources */ = {isa = PBXBuildFile; fileRef = 6062CBE219BCA483005A0EF6 /* _DDGroupTerm.m */; };
+		6062CC1019BCA483005A0EF6 /* _DDNumberExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 6062CBE419BCA483005A0EF6 /* _DDNumberExpression.m */; };
+		6062CC1119BCA483005A0EF6 /* _DDNumberTerm.m in Sources */ = {isa = PBXBuildFile; fileRef = 6062CBE619BCA483005A0EF6 /* _DDNumberTerm.m */; };
+		6062CC1219BCA483005A0EF6 /* _DDOperatorTerm.m in Sources */ = {isa = PBXBuildFile; fileRef = 6062CBE819BCA483005A0EF6 /* _DDOperatorTerm.m */; };
+		6062CC1319BCA483005A0EF6 /* _DDParserTerm.m in Sources */ = {isa = PBXBuildFile; fileRef = 6062CBEA19BCA483005A0EF6 /* _DDParserTerm.m */; };
+		6062CC1419BCA483005A0EF6 /* _DDPrecisionFunctionEvaluator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6062CBEC19BCA483005A0EF6 /* _DDPrecisionFunctionEvaluator.m */; };
+		6062CC1519BCA483005A0EF6 /* _DDRewriteRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 6062CBEE19BCA483005A0EF6 /* _DDRewriteRule.m */; };
+		6062CC1619BCA483005A0EF6 /* _DDVariableExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 6062CBF019BCA483005A0EF6 /* _DDVariableExpression.m */; };
+		6062CC1719BCA483005A0EF6 /* _DDVariableTerm.m in Sources */ = {isa = PBXBuildFile; fileRef = 6062CBF219BCA483005A0EF6 /* _DDVariableTerm.m */; };
+		6062CC1819BCA483005A0EF6 /* DDExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 6062CBF419BCA483005A0EF6 /* DDExpression.m */; };
+		6062CC1919BCA483005A0EF6 /* DDExpressionRewriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6062CBF619BCA483005A0EF6 /* DDExpressionRewriter.m */; };
+		6062CC1A19BCA483005A0EF6 /* DDMathEvaluator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6062CBF919BCA483005A0EF6 /* DDMathEvaluator.m */; };
+		6062CC1B19BCA483005A0EF6 /* DDMathOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6062CBFB19BCA483005A0EF6 /* DDMathOperator.m */; };
+		6062CC1C19BCA483005A0EF6 /* DDMathStringToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 6062CC0019BCA483005A0EF6 /* DDMathStringToken.m */; };
+		6062CC1D19BCA483005A0EF6 /* DDMathStringTokenizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6062CC0219BCA483005A0EF6 /* DDMathStringTokenizer.m */; };
+		6062CC1E19BCA483005A0EF6 /* DDParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6062CC0419BCA483005A0EF6 /* DDParser.m */; };
+		6062CC1F19BCA483005A0EF6 /* DDParserTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 6062CC0619BCA483005A0EF6 /* DDParserTypes.m */; };
+		6062CC2019BCA483005A0EF6 /* DDTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 6062CC0819BCA483005A0EF6 /* DDTypes.m */; };
+		6062CC2119BCA483005A0EF6 /* NSString+DDMathParsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 6062CC0A19BCA483005A0EF6 /* NSString+DDMathParsing.m */; };
+		60727C1019AE2D66004C447E /* CCCalculatorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 60727C0F19AE2D66004C447E /* CCCalculatorButton.m */; };
+		60727C1219AE2F2A004C447E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60727C1119AE2F2A004C447E /* QuartzCore.framework */; };
+		60A2ED9919BC088700266273 /* CCColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A2ED9819BC088700266273 /* CCColorPickerViewController.m */; };
+		60AE55DE19C5E556004270C6 /* UIColor+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 60AE55DD19C5E556004270C6 /* UIColor+Chameleon.m */; };
+		60AE55E919C5E615004270C6 /* ChameleonStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 60AE55E219C5E615004270C6 /* ChameleonStatusBar.m */; };
+		60AE55EA19C5E615004270C6 /* NSArray+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 60AE55E419C5E615004270C6 /* NSArray+Chameleon.m */; };
+		60AE55EB19C5E615004270C6 /* UIColor+CIELAB.m in Sources */ = {isa = PBXBuildFile; fileRef = 60AE55E619C5E615004270C6 /* UIColor+CIELAB.m */; };
+		60AE55EC19C5E615004270C6 /* UIViewController+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 60AE55E819C5E615004270C6 /* UIViewController+Chameleon.m */; };
+		CC57ED691CDB3CBD00D0009B /* CCReporNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC57ED681CDB3CBD00D0009B /* CCReporNViewController.m */; };
+		CCD6BE0C1CC5BB88003928ED /* testQuestions.json in Resources */ = {isa = PBXBuildFile; fileRef = CCD6BE0B1CC5BB88003928ED /* testQuestions.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		60409B8319AE0E0A00C53B38 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 60409B5519AE0E0900C53B38 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 60409B5C19AE0E0900C53B38;
+			remoteInfo = ColourCalculator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3A4E1DCC1D655CCD00B917E0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3A4E1DCB1D655CCD00B917E0 /* Affdex.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3A012D271CB95FED0015E7A9 /* CCColorValueTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCColorValueTableViewCell.h; sourceTree = "<group>"; };
+		3A012D281CB95FED0015E7A9 /* CCColorValueTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCColorValueTableViewCell.m; sourceTree = "<group>"; };
+		3A0212401D675D750042C9C4 /* CCInstructionPopUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCInstructionPopUp.h; sourceTree = "<group>"; };
+		3A0212411D675D750042C9C4 /* CCInstructionPopUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCInstructionPopUp.m; sourceTree = "<group>"; };
+		3A11C7D31CB74F960089609E /* CCAdminViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAdminViewController.h; sourceTree = "<group>"; };
+		3A11C7D41CB74F960089609E /* CCAdminViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAdminViewController.m; sourceTree = "<group>"; };
+		3A11C7D61CB7DAC00089609E /* CCParticipantsTestResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCParticipantsTestResult.h; sourceTree = "<group>"; };
+		3A11C7D71CB7DAC00089609E /* CCParticipantsTestResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCParticipantsTestResult.m; sourceTree = "<group>"; };
+		3A174E601D68ED1700054CF6 /* CCEmotion_Test1Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCEmotion_Test1Cell.h; sourceTree = "<group>"; };
+		3A174E611D68ED1700054CF6 /* CCEmotion_Test1Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCEmotion_Test1Cell.m; sourceTree = "<group>"; };
+		3A1CBE1E1CB5C64100BD2CD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3A2A3FAB1CB9091400D8F323 /* CCTestResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTestResultViewController.h; sourceTree = "<group>"; };
+		3A2A3FAC1CB9091400D8F323 /* CCTestResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTestResultViewController.m; sourceTree = "<group>"; };
+		3A5970571D32CED800E5A4F7 /* CCHandSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCHandSetViewController.h; sourceTree = "<group>"; };
+		3A5970581D32CED800E5A4F7 /* CCHandSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCHandSetViewController.m; sourceTree = "<group>"; };
+		3A6C2AB11D62ABCA0077BB05 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		3A6C2AB31D62ABD40077BB05 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		3A6C2AB51D62ABE50077BB05 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		3A6C2AB71D62ABFD0077BB05 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3A6C2AB91D62AC080077BB05 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		3A6C2ABB1D62AC2C0077BB05 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
+		3A6C2ABD1D62AC510077BB05 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		3A6D19FD1CC3F11E00478389 /* CCTestResultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTestResultTableViewCell.h; sourceTree = "<group>"; };
+		3A6D19FE1CC3F11E00478389 /* CCTestResultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTestResultTableViewCell.m; sourceTree = "<group>"; };
+		3A6DA9A81CB73B7100B8D777 /* CCReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCReportViewController.h; sourceTree = "<group>"; };
+		3A6DA9A91CB73B7100B8D777 /* CCReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCReportViewController.m; sourceTree = "<group>"; };
+		3A83FD7B1D5B320600148235 /* Affdex.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Affdex.framework; sourceTree = "<group>"; };
+		3A97277D1CCCFFFF006FDF00 /* MPColorTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPColorTools.h; path = MPColorTools/MPColorTools.h; sourceTree = "<group>"; };
+		3A97277E1CCCFFFF006FDF00 /* MPColorTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPColorTools.m; path = MPColorTools/MPColorTools.m; sourceTree = "<group>"; };
+		3AA763001CB3CE28005CCF76 /* CCCalibrateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCalibrateViewController.h; sourceTree = "<group>"; };
+		3AA763011CB3CE28005CCF76 /* CCCalibrateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCalibrateViewController.m; sourceTree = "<group>"; };
+		3AA8751D1D3DCDA100E3CF49 /* CCOutlinedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCOutlinedString.h; sourceTree = "<group>"; };
+		3AA8751E1D3DCDA100E3CF49 /* CCOutlinedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCOutlinedString.m; sourceTree = "<group>"; };
+		3AA875201D3F60F200E3CF49 /* CCLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLabel.h; sourceTree = "<group>"; };
+		3AA875211D3F60F200E3CF49 /* CCLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLabel.m; sourceTree = "<group>"; };
+		3ABC37F31D5C81D0000D73C7 /* CCCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCameraViewController.h; sourceTree = "<group>"; };
+		3ABC37F41D5C81D0000D73C7 /* CCCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCameraViewController.m; sourceTree = "<group>"; };
+		3ADAF0921D34EDB800DEFBA5 /* CCStartTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCStartTestViewController.h; path = ViewController/CCStartTestViewController.h; sourceTree = "<group>"; };
+		3ADAF0931D34EDB800DEFBA5 /* CCStartTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCStartTestViewController.m; path = ViewController/CCStartTestViewController.m; sourceTree = "<group>"; };
+		3ADAF0951D34FA7400DEFBA5 /* CCRestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCRestViewController.h; sourceTree = "<group>"; };
+		3ADAF0961D34FA7400DEFBA5 /* CCRestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCRestViewController.m; sourceTree = "<group>"; };
+		3ADAF0981D355FAE00DEFBA5 /* CCFinalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFinalViewController.h; sourceTree = "<group>"; };
+		3ADAF0991D355FAE00DEFBA5 /* CCFinalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCFinalViewController.m; sourceTree = "<group>"; };
+		6025C01619AF6410008347E6 /* CCConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCConstants.h; sourceTree = "<group>"; };
+		60409B5D19AE0E0900C53B38 /* ColourCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColourCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		60409B6019AE0E0900C53B38 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		60409B6219AE0E0900C53B38 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		60409B6419AE0E0900C53B38 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		60409B6819AE0E0900C53B38 /* ColourCalculator-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ColourCalculator-Info.plist"; sourceTree = "<group>"; };
+		60409B6A19AE0E0900C53B38 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		60409B6C19AE0E0900C53B38 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		60409B6E19AE0E0900C53B38 /* ColourCalculator-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ColourCalculator-Prefix.pch"; sourceTree = "<group>"; };
+		60409B6F19AE0E0900C53B38 /* CCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCAppDelegate.h; sourceTree = "<group>"; };
+		60409B7019AE0E0900C53B38 /* CCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCAppDelegate.m; sourceTree = "<group>"; };
+		60409B7819AE0E0A00C53B38 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		60409B7E19AE0E0A00C53B38 /* ColourCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColourCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		60409B7F19AE0E0A00C53B38 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		60409B8719AE0E0A00C53B38 /* ColourCalculatorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ColourCalculatorTests-Info.plist"; sourceTree = "<group>"; };
+		60409B8919AE0E0A00C53B38 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		60409B8B19AE0E0A00C53B38 /* ColourCalculatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColourCalculatorTests.m; sourceTree = "<group>"; };
+		60409B9619AE0E9500C53B38 /* CCCalculatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCCalculatorViewController.h; path = ViewController/CCCalculatorViewController.h; sourceTree = "<group>"; };
+		60409B9719AE0E9500C53B38 /* CCCalculatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCCalculatorViewController.m; path = ViewController/CCCalculatorViewController.m; sourceTree = "<group>"; };
+		60409BE619AE11C600C53B38 /* nko_brightness_guide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nko_brightness_guide.png; sourceTree = "<group>"; };
+		60409BE719AE11C600C53B38 /* nko_brightness_guide@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nko_brightness_guide@2x.png"; sourceTree = "<group>"; };
+		60409BE819AE11C600C53B38 /* nko_colormap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nko_colormap.png; sourceTree = "<group>"; };
+		60409BE919AE11C600C53B38 /* NKOColorPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKOColorPickerView.h; sourceTree = "<group>"; };
+		60409BEA19AE11C600C53B38 /* NKOColorPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKOColorPickerView.m; sourceTree = "<group>"; };
+		6049B68419B8BCCF000E66EA /* CCCalculatorButtonData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCCalculatorButtonData.h; path = Model/CCCalculatorButtonData.h; sourceTree = "<group>"; };
+		6049B68519B8BCCF000E66EA /* CCCalculatorButtonData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCCalculatorButtonData.m; path = Model/CCCalculatorButtonData.m; sourceTree = "<group>"; };
+		6049B68719B8C080000E66EA /* CCUserDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCUserDataManager.h; path = Model/CCUserDataManager.h; sourceTree = "<group>"; };
+		6049B68819B8C080000E66EA /* CCUserDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCUserDataManager.m; path = Model/CCUserDataManager.m; sourceTree = "<group>"; };
+		6049B68A19B8C2CE000E66EA /* CalculatorButtonInitialData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = CalculatorButtonInitialData.plist; path = Model/CalculatorButtonInitialData.plist; sourceTree = "<group>"; };
+		6062CBD119BC238D005A0EF6 /* CCCalculatorNumberData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCCalculatorNumberData.h; path = Model/CCCalculatorNumberData.h; sourceTree = "<group>"; };
+		6062CBD219BC238D005A0EF6 /* CCCalculatorNumberData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCCalculatorNumberData.m; path = Model/CCCalculatorNumberData.m; sourceTree = "<group>"; };
+		6062CBD419BC295F005A0EF6 /* UIColor+Extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extra.h"; sourceTree = "<group>"; };
+		6062CBD519BC295F005A0EF6 /* UIColor+Extra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extra.m"; sourceTree = "<group>"; };
+		6062CBD919BCA483005A0EF6 /* _DDDecimalFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DDDecimalFunctions.h; sourceTree = "<group>"; };
+		6062CBDA19BCA483005A0EF6 /* _DDDecimalFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DDDecimalFunctions.m; sourceTree = "<group>"; };
+		6062CBDB19BCA483005A0EF6 /* _DDFunctionEvaluator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DDFunctionEvaluator.h; sourceTree = "<group>"; };
+		6062CBDC19BCA483005A0EF6 /* _DDFunctionEvaluator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DDFunctionEvaluator.m; sourceTree = "<group>"; };
+		6062CBDD19BCA483005A0EF6 /* _DDFunctionExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DDFunctionExpression.h; sourceTree = "<group>"; };
+		6062CBDE19BCA483005A0EF6 /* _DDFunctionExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DDFunctionExpression.m; sourceTree = "<group>"; };
+		6062CBDF19BCA483005A0EF6 /* _DDFunctionTerm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DDFunctionTerm.h; sourceTree = "<group>"; };
+		6062CBE019BCA483005A0EF6 /* _DDFunctionTerm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DDFunctionTerm.m; sourceTree = "<group>"; };
+		6062CBE119BCA483005A0EF6 /* _DDGroupTerm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DDGroupTerm.h; sourceTree = "<group>"; };
+		6062CBE219BCA483005A0EF6 /* _DDGroupTerm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DDGroupTerm.m; sourceTree = "<group>"; };
+		6062CBE319BCA483005A0EF6 /* _DDNumberExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DDNumberExpression.h; sourceTree = "<group>"; };
+		6062CBE419BCA483005A0EF6 /* _DDNumberExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DDNumberExpression.m; sourceTree = "<group>"; };
+		6062CBE519BCA483005A0EF6 /* _DDNumberTerm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DDNumberTerm.h; sourceTree = "<group>"; };
+		6062CBE619BCA483005A0EF6 /* _DDNumberTerm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DDNumberTerm.m; sourceTree = "<group>"; };
+		6062CBE719BCA483005A0EF6 /* _DDOperatorTerm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DDOperatorTerm.h; sourceTree = "<group>"; };
+		6062CBE819BCA483005A0EF6 /* _DDOperatorTerm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DDOperatorTerm.m; sourceTree = "<group>"; };
+		6062CBE919BCA483005A0EF6 /* _DDParserTerm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DDParserTerm.h; sourceTree = "<group>"; };
+		6062CBEA19BCA483005A0EF6 /* _DDParserTerm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DDParserTerm.m; sourceTree = "<group>"; };
+		6062CBEB19BCA483005A0EF6 /* _DDPrecisionFunctionEvaluator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DDPrecisionFunctionEvaluator.h; sourceTree = "<group>"; };
+		6062CBEC19BCA483005A0EF6 /* _DDPrecisionFunctionEvaluator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DDPrecisionFunctionEvaluator.m; sourceTree = "<group>"; };
+		6062CBED19BCA483005A0EF6 /* _DDRewriteRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DDRewriteRule.h; sourceTree = "<group>"; };
+		6062CBEE19BCA483005A0EF6 /* _DDRewriteRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DDRewriteRule.m; sourceTree = "<group>"; };
+		6062CBEF19BCA483005A0EF6 /* _DDVariableExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DDVariableExpression.h; sourceTree = "<group>"; };
+		6062CBF019BCA483005A0EF6 /* _DDVariableExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DDVariableExpression.m; sourceTree = "<group>"; };
+		6062CBF119BCA483005A0EF6 /* _DDVariableTerm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DDVariableTerm.h; sourceTree = "<group>"; };
+		6062CBF219BCA483005A0EF6 /* _DDVariableTerm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DDVariableTerm.m; sourceTree = "<group>"; };
+		6062CBF319BCA483005A0EF6 /* DDExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDExpression.h; sourceTree = "<group>"; };
+		6062CBF419BCA483005A0EF6 /* DDExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDExpression.m; sourceTree = "<group>"; };
+		6062CBF519BCA483005A0EF6 /* DDExpressionRewriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDExpressionRewriter.h; sourceTree = "<group>"; };
+		6062CBF619BCA483005A0EF6 /* DDExpressionRewriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDExpressionRewriter.m; sourceTree = "<group>"; };
+		6062CBF719BCA483005A0EF6 /* DDMathEvaluator+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DDMathEvaluator+Private.h"; sourceTree = "<group>"; };
+		6062CBF819BCA483005A0EF6 /* DDMathEvaluator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMathEvaluator.h; sourceTree = "<group>"; };
+		6062CBF919BCA483005A0EF6 /* DDMathEvaluator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMathEvaluator.m; sourceTree = "<group>"; };
+		6062CBFA19BCA483005A0EF6 /* DDMathOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMathOperator.h; sourceTree = "<group>"; };
+		6062CBFB19BCA483005A0EF6 /* DDMathOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMathOperator.m; sourceTree = "<group>"; };
+		6062CBFC19BCA483005A0EF6 /* DDMathOperator_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMathOperator_Internal.h; sourceTree = "<group>"; };
+		6062CBFD19BCA483005A0EF6 /* DDMathParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMathParser.h; sourceTree = "<group>"; };
+		6062CBFE19BCA483005A0EF6 /* DDMathParserMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMathParserMacros.h; sourceTree = "<group>"; };
+		6062CBFF19BCA483005A0EF6 /* DDMathStringToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMathStringToken.h; sourceTree = "<group>"; };
+		6062CC0019BCA483005A0EF6 /* DDMathStringToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMathStringToken.m; sourceTree = "<group>"; };
+		6062CC0119BCA483005A0EF6 /* DDMathStringTokenizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMathStringTokenizer.h; sourceTree = "<group>"; };
+		6062CC0219BCA483005A0EF6 /* DDMathStringTokenizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMathStringTokenizer.m; sourceTree = "<group>"; };
+		6062CC0319BCA483005A0EF6 /* DDParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDParser.h; sourceTree = "<group>"; };
+		6062CC0419BCA483005A0EF6 /* DDParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDParser.m; sourceTree = "<group>"; };
+		6062CC0519BCA483005A0EF6 /* DDParserTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDParserTypes.h; sourceTree = "<group>"; };
+		6062CC0619BCA483005A0EF6 /* DDParserTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDParserTypes.m; sourceTree = "<group>"; };
+		6062CC0719BCA483005A0EF6 /* DDTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTypes.h; sourceTree = "<group>"; };
+		6062CC0819BCA483005A0EF6 /* DDTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTypes.m; sourceTree = "<group>"; };
+		6062CC0919BCA483005A0EF6 /* NSString+DDMathParsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DDMathParsing.h"; sourceTree = "<group>"; };
+		6062CC0A19BCA483005A0EF6 /* NSString+DDMathParsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DDMathParsing.m"; sourceTree = "<group>"; };
+		60727C0E19AE2D66004C447E /* CCCalculatorButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCCalculatorButton.h; path = View/CCCalculatorButton.h; sourceTree = "<group>"; };
+		60727C0F19AE2D66004C447E /* CCCalculatorButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCCalculatorButton.m; path = View/CCCalculatorButton.m; sourceTree = "<group>"; };
+		60727C1119AE2F2A004C447E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		60A2ED9219BC02EA00266273 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		60A2ED9719BC088700266273 /* CCColorPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCColorPickerViewController.h; path = ViewController/CCColorPickerViewController.h; sourceTree = "<group>"; };
+		60A2ED9819BC088700266273 /* CCColorPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCColorPickerViewController.m; path = ViewController/CCColorPickerViewController.m; sourceTree = "<group>"; };
+		60AE55DC19C5E556004270C6 /* UIColor+Chameleon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Chameleon.h"; sourceTree = "<group>"; };
+		60AE55DD19C5E556004270C6 /* UIColor+Chameleon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Chameleon.m"; sourceTree = "<group>"; };
+		60AE55DF19C5E615004270C6 /* Chameleon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chameleon.h; sourceTree = "<group>"; };
+		60AE55E019C5E615004270C6 /* ChameleonMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChameleonMacros.h; sourceTree = "<group>"; };
+		60AE55E119C5E615004270C6 /* ChameleonStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChameleonStatusBar.h; sourceTree = "<group>"; };
+		60AE55E219C5E615004270C6 /* ChameleonStatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChameleonStatusBar.m; sourceTree = "<group>"; };
+		60AE55E319C5E615004270C6 /* NSArray+Chameleon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Chameleon.h"; sourceTree = "<group>"; };
+		60AE55E419C5E615004270C6 /* NSArray+Chameleon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Chameleon.m"; sourceTree = "<group>"; };
+		60AE55E519C5E615004270C6 /* UIColor+CIELAB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CIELAB.h"; sourceTree = "<group>"; };
+		60AE55E619C5E615004270C6 /* UIColor+CIELAB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CIELAB.m"; sourceTree = "<group>"; };
+		60AE55E719C5E615004270C6 /* UIViewController+Chameleon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Chameleon.h"; sourceTree = "<group>"; };
+		60AE55E819C5E615004270C6 /* UIViewController+Chameleon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Chameleon.m"; sourceTree = "<group>"; };
+		CC57ED671CDB3CBD00D0009B /* CCReporNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCReporNViewController.h; sourceTree = "<group>"; };
+		CC57ED681CDB3CBD00D0009B /* CCReporNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCReporNViewController.m; sourceTree = "<group>"; };
+		CCD6BE0B1CC5BB88003928ED /* testQuestions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = testQuestions.json; path = Model/testQuestions.json; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		60409B5A19AE0E0900C53B38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A6C2AB41D62ABD40077BB05 /* AVFoundation.framework in Frameworks */,
+				3A6C2ABE1D62AC510077BB05 /* libc++.tbd in Frameworks */,
+				3A6C2ABC1D62AC2C0077BB05 /* libc++.1.tbd in Frameworks */,
+				3A6C2ABA1D62AC080077BB05 /* AssetsLibrary.framework in Frameworks */,
+				3A6C2AB81D62ABFD0077BB05 /* SystemConfiguration.framework in Frameworks */,
+				60409B6319AE0E0900C53B38 /* CoreGraphics.framework in Frameworks */,
+				3A6C2AB61D62ABE50077BB05 /* CoreImage.framework in Frameworks */,
+				3A6C2AB21D62ABCA0077BB05 /* CoreMedia.framework in Frameworks */,
+				3A4E1DCA1D655CCD00B917E0 /* Affdex.framework in Frameworks */,
+				60727C1219AE2F2A004C447E /* QuartzCore.framework in Frameworks */,
+				60409B6519AE0E0900C53B38 /* UIKit.framework in Frameworks */,
+				60409B6119AE0E0900C53B38 /* Foundation.framework in Frameworks */,
+				3A83FD7C1D5B320600148235 /* Affdex.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60409B7B19AE0E0A00C53B38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60409B8019AE0E0A00C53B38 /* XCTest.framework in Frameworks */,
+				60409B8219AE0E0A00C53B38 /* UIKit.framework in Frameworks */,
+				60409B8119AE0E0A00C53B38 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3A9727781CCCFFB9006FDF00 /* MPColorTools */ = {
+			isa = PBXGroup;
+			children = (
+				3A97277D1CCCFFFF006FDF00 /* MPColorTools.h */,
+				3A97277E1CCCFFFF006FDF00 /* MPColorTools.m */,
+			);
+			name = MPColorTools;
+			sourceTree = "<group>";
+		};
+		60409B5419AE0E0900C53B38 = {
+			isa = PBXGroup;
+			children = (
+				60409B6619AE0E0900C53B38 /* ColourCalculator */,
+				60409B8519AE0E0A00C53B38 /* ColourCalculatorTests */,
+				60409B9919AE0EB700C53B38 /* Vendor */,
+				60409B5F19AE0E0900C53B38 /* Frameworks */,
+				60409B5E19AE0E0900C53B38 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		60409B5E19AE0E0900C53B38 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				60409B5D19AE0E0900C53B38 /* ColourCalculator.app */,
+				60409B7E19AE0E0A00C53B38 /* ColourCalculatorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		60409B5F19AE0E0900C53B38 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3A6C2ABD1D62AC510077BB05 /* libc++.tbd */,
+				3A6C2ABB1D62AC2C0077BB05 /* libc++.1.tbd */,
+				3A6C2AB91D62AC080077BB05 /* AssetsLibrary.framework */,
+				3A6C2AB71D62ABFD0077BB05 /* SystemConfiguration.framework */,
+				3A6C2AB51D62ABE50077BB05 /* CoreImage.framework */,
+				3A6C2AB31D62ABD40077BB05 /* AVFoundation.framework */,
+				3A6C2AB11D62ABCA0077BB05 /* CoreMedia.framework */,
+				3A83FD7B1D5B320600148235 /* Affdex.framework */,
+				60A2ED9219BC02EA00266273 /* libz.dylib */,
+				60727C1119AE2F2A004C447E /* QuartzCore.framework */,
+				60409B6019AE0E0900C53B38 /* Foundation.framework */,
+				60409B6219AE0E0900C53B38 /* CoreGraphics.framework */,
+				60409B6419AE0E0900C53B38 /* UIKit.framework */,
+				60409B7F19AE0E0A00C53B38 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		60409B6619AE0E0900C53B38 /* ColourCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				60409B6F19AE0E0900C53B38 /* CCAppDelegate.h */,
+				6025C01619AF6410008347E6 /* CCConstants.h */,
+				6062CBD419BC295F005A0EF6 /* UIColor+Extra.h */,
+				6062CBD519BC295F005A0EF6 /* UIColor+Extra.m */,
+				3A1CBE1F1CB5C64100BD2CD0 /* Main.storyboard */,
+				60409B7019AE0E0900C53B38 /* CCAppDelegate.m */,
+				6049B68319B8BCAF000E66EA /* Model */,
+				60727C0D19AE2D5A004C447E /* View */,
+				60409B9519AE0E5400C53B38 /* View Controller */,
+				60409B7819AE0E0A00C53B38 /* Images.xcassets */,
+				60409B6719AE0E0900C53B38 /* Supporting Files */,
+			);
+			path = ColourCalculator;
+			sourceTree = "<group>";
+		};
+		60409B6719AE0E0900C53B38 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				60409B6819AE0E0900C53B38 /* ColourCalculator-Info.plist */,
+				60409B6919AE0E0900C53B38 /* InfoPlist.strings */,
+				60409B6C19AE0E0900C53B38 /* main.m */,
+				60409B6E19AE0E0900C53B38 /* ColourCalculator-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		60409B8519AE0E0A00C53B38 /* ColourCalculatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				60409B8B19AE0E0A00C53B38 /* ColourCalculatorTests.m */,
+				60409B8619AE0E0A00C53B38 /* Supporting Files */,
+			);
+			path = ColourCalculatorTests;
+			sourceTree = "<group>";
+		};
+		60409B8619AE0E0A00C53B38 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				60409B8719AE0E0A00C53B38 /* ColourCalculatorTests-Info.plist */,
+				60409B8819AE0E0A00C53B38 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		60409B9519AE0E5400C53B38 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3A11C7D31CB74F960089609E /* CCAdminViewController.h */,
+				3A11C7D41CB74F960089609E /* CCAdminViewController.m */,
+				3AA763001CB3CE28005CCF76 /* CCCalibrateViewController.h */,
+				3AA763011CB3CE28005CCF76 /* CCCalibrateViewController.m */,
+				60409B9619AE0E9500C53B38 /* CCCalculatorViewController.h */,
+				60409B9719AE0E9500C53B38 /* CCCalculatorViewController.m */,
+				60A2ED9719BC088700266273 /* CCColorPickerViewController.h */,
+				60A2ED9819BC088700266273 /* CCColorPickerViewController.m */,
+				3A6DA9A81CB73B7100B8D777 /* CCReportViewController.h */,
+				3A6DA9A91CB73B7100B8D777 /* CCReportViewController.m */,
+				3A2A3FAB1CB9091400D8F323 /* CCTestResultViewController.h */,
+				3A2A3FAC1CB9091400D8F323 /* CCTestResultViewController.m */,
+				CC57ED671CDB3CBD00D0009B /* CCReporNViewController.h */,
+				CC57ED681CDB3CBD00D0009B /* CCReporNViewController.m */,
+				3A5970571D32CED800E5A4F7 /* CCHandSetViewController.h */,
+				3A5970581D32CED800E5A4F7 /* CCHandSetViewController.m */,
+				3ADAF0921D34EDB800DEFBA5 /* CCStartTestViewController.h */,
+				3ADAF0931D34EDB800DEFBA5 /* CCStartTestViewController.m */,
+				3ADAF0951D34FA7400DEFBA5 /* CCRestViewController.h */,
+				3ADAF0961D34FA7400DEFBA5 /* CCRestViewController.m */,
+				3ADAF0981D355FAE00DEFBA5 /* CCFinalViewController.h */,
+				3ADAF0991D355FAE00DEFBA5 /* CCFinalViewController.m */,
+				3ABC37F31D5C81D0000D73C7 /* CCCameraViewController.h */,
+				3ABC37F41D5C81D0000D73C7 /* CCCameraViewController.m */,
+			);
+			name = "View Controller";
+			sourceTree = "<group>";
+		};
+		60409B9919AE0EB700C53B38 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				60AE55DB19C5E556004270C6 /* Chameleon */,
+				6062CBD819BCA483005A0EF6 /* DDMathParser */,
+				60409BE419AE11C600C53B38 /* NKO-Color-Picker-View-iOS */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		60409BE419AE11C600C53B38 /* NKO-Color-Picker-View-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				60409BE519AE11C600C53B38 /* Assets */,
+				60409BE919AE11C600C53B38 /* NKOColorPickerView.h */,
+				60409BEA19AE11C600C53B38 /* NKOColorPickerView.m */,
+			);
+			name = "NKO-Color-Picker-View-iOS";
+			path = "Vendor/NKO-Color-Picker-View-iOS";
+			sourceTree = "<group>";
+		};
+		60409BE519AE11C600C53B38 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				60409BE619AE11C600C53B38 /* nko_brightness_guide.png */,
+				60409BE719AE11C600C53B38 /* nko_brightness_guide@2x.png */,
+				60409BE819AE11C600C53B38 /* nko_colormap.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		6049B68319B8BCAF000E66EA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6049B68419B8BCCF000E66EA /* CCCalculatorButtonData.h */,
+				6049B68519B8BCCF000E66EA /* CCCalculatorButtonData.m */,
+				6062CBD119BC238D005A0EF6 /* CCCalculatorNumberData.h */,
+				6062CBD219BC238D005A0EF6 /* CCCalculatorNumberData.m */,
+				6049B68719B8C080000E66EA /* CCUserDataManager.h */,
+				6049B68819B8C080000E66EA /* CCUserDataManager.m */,
+				6049B68A19B8C2CE000E66EA /* CalculatorButtonInitialData.plist */,
+				3A11C7D61CB7DAC00089609E /* CCParticipantsTestResult.h */,
+				3A11C7D71CB7DAC00089609E /* CCParticipantsTestResult.m */,
+				CCD6BE0B1CC5BB88003928ED /* testQuestions.json */,
+				3AA8751D1D3DCDA100E3CF49 /* CCOutlinedString.h */,
+				3AA8751E1D3DCDA100E3CF49 /* CCOutlinedString.m */,
+				3AA875201D3F60F200E3CF49 /* CCLabel.h */,
+				3AA875211D3F60F200E3CF49 /* CCLabel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		6062CBD819BCA483005A0EF6 /* DDMathParser */ = {
+			isa = PBXGroup;
+			children = (
+				6062CBD919BCA483005A0EF6 /* _DDDecimalFunctions.h */,
+				6062CBDA19BCA483005A0EF6 /* _DDDecimalFunctions.m */,
+				6062CBDB19BCA483005A0EF6 /* _DDFunctionEvaluator.h */,
+				6062CBDC19BCA483005A0EF6 /* _DDFunctionEvaluator.m */,
+				6062CBDD19BCA483005A0EF6 /* _DDFunctionExpression.h */,
+				6062CBDE19BCA483005A0EF6 /* _DDFunctionExpression.m */,
+				6062CBDF19BCA483005A0EF6 /* _DDFunctionTerm.h */,
+				6062CBE019BCA483005A0EF6 /* _DDFunctionTerm.m */,
+				6062CBE119BCA483005A0EF6 /* _DDGroupTerm.h */,
+				6062CBE219BCA483005A0EF6 /* _DDGroupTerm.m */,
+				6062CBE319BCA483005A0EF6 /* _DDNumberExpression.h */,
+				6062CBE419BCA483005A0EF6 /* _DDNumberExpression.m */,
+				6062CBE519BCA483005A0EF6 /* _DDNumberTerm.h */,
+				6062CBE619BCA483005A0EF6 /* _DDNumberTerm.m */,
+				6062CBE719BCA483005A0EF6 /* _DDOperatorTerm.h */,
+				6062CBE819BCA483005A0EF6 /* _DDOperatorTerm.m */,
+				6062CBE919BCA483005A0EF6 /* _DDParserTerm.h */,
+				6062CBEA19BCA483005A0EF6 /* _DDParserTerm.m */,
+				6062CBEB19BCA483005A0EF6 /* _DDPrecisionFunctionEvaluator.h */,
+				6062CBEC19BCA483005A0EF6 /* _DDPrecisionFunctionEvaluator.m */,
+				6062CBED19BCA483005A0EF6 /* _DDRewriteRule.h */,
+				6062CBEE19BCA483005A0EF6 /* _DDRewriteRule.m */,
+				6062CBEF19BCA483005A0EF6 /* _DDVariableExpression.h */,
+				6062CBF019BCA483005A0EF6 /* _DDVariableExpression.m */,
+				6062CBF119BCA483005A0EF6 /* _DDVariableTerm.h */,
+				6062CBF219BCA483005A0EF6 /* _DDVariableTerm.m */,
+				6062CBF319BCA483005A0EF6 /* DDExpression.h */,
+				6062CBF419BCA483005A0EF6 /* DDExpression.m */,
+				6062CBF519BCA483005A0EF6 /* DDExpressionRewriter.h */,
+				6062CBF619BCA483005A0EF6 /* DDExpressionRewriter.m */,
+				6062CBF719BCA483005A0EF6 /* DDMathEvaluator+Private.h */,
+				6062CBF819BCA483005A0EF6 /* DDMathEvaluator.h */,
+				6062CBF919BCA483005A0EF6 /* DDMathEvaluator.m */,
+				6062CBFA19BCA483005A0EF6 /* DDMathOperator.h */,
+				6062CBFB19BCA483005A0EF6 /* DDMathOperator.m */,
+				6062CBFC19BCA483005A0EF6 /* DDMathOperator_Internal.h */,
+				6062CBFD19BCA483005A0EF6 /* DDMathParser.h */,
+				6062CBFE19BCA483005A0EF6 /* DDMathParserMacros.h */,
+				6062CBFF19BCA483005A0EF6 /* DDMathStringToken.h */,
+				6062CC0019BCA483005A0EF6 /* DDMathStringToken.m */,
+				6062CC0119BCA483005A0EF6 /* DDMathStringTokenizer.h */,
+				6062CC0219BCA483005A0EF6 /* DDMathStringTokenizer.m */,
+				6062CC0319BCA483005A0EF6 /* DDParser.h */,
+				6062CC0419BCA483005A0EF6 /* DDParser.m */,
+				6062CC0519BCA483005A0EF6 /* DDParserTypes.h */,
+				6062CC0619BCA483005A0EF6 /* DDParserTypes.m */,
+				6062CC0719BCA483005A0EF6 /* DDTypes.h */,
+				6062CC0819BCA483005A0EF6 /* DDTypes.m */,
+				6062CC0919BCA483005A0EF6 /* NSString+DDMathParsing.h */,
+				6062CC0A19BCA483005A0EF6 /* NSString+DDMathParsing.m */,
+			);
+			name = DDMathParser;
+			path = Vendor/DDMathParser;
+			sourceTree = "<group>";
+		};
+		60727C0D19AE2D5A004C447E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				60727C0E19AE2D66004C447E /* CCCalculatorButton.h */,
+				60727C0F19AE2D66004C447E /* CCCalculatorButton.m */,
+				3A012D271CB95FED0015E7A9 /* CCColorValueTableViewCell.h */,
+				3A012D281CB95FED0015E7A9 /* CCColorValueTableViewCell.m */,
+				3A6D19FD1CC3F11E00478389 /* CCTestResultTableViewCell.h */,
+				3A9727781CCCFFB9006FDF00 /* MPColorTools */,
+				3A6D19FE1CC3F11E00478389 /* CCTestResultTableViewCell.m */,
+				3A0212401D675D750042C9C4 /* CCInstructionPopUp.h */,
+				3A0212411D675D750042C9C4 /* CCInstructionPopUp.m */,
+				3A174E601D68ED1700054CF6 /* CCEmotion_Test1Cell.h */,
+				3A174E611D68ED1700054CF6 /* CCEmotion_Test1Cell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		60AE55DB19C5E556004270C6 /* Chameleon */ = {
+			isa = PBXGroup;
+			children = (
+				60AE55DF19C5E615004270C6 /* Chameleon.h */,
+				60AE55E019C5E615004270C6 /* ChameleonMacros.h */,
+				60AE55E119C5E615004270C6 /* ChameleonStatusBar.h */,
+				60AE55E219C5E615004270C6 /* ChameleonStatusBar.m */,
+				60AE55E319C5E615004270C6 /* NSArray+Chameleon.h */,
+				60AE55E419C5E615004270C6 /* NSArray+Chameleon.m */,
+				60AE55E519C5E615004270C6 /* UIColor+CIELAB.h */,
+				60AE55E619C5E615004270C6 /* UIColor+CIELAB.m */,
+				60AE55E719C5E615004270C6 /* UIViewController+Chameleon.h */,
+				60AE55E819C5E615004270C6 /* UIViewController+Chameleon.m */,
+				60AE55DC19C5E556004270C6 /* UIColor+Chameleon.h */,
+				60AE55DD19C5E556004270C6 /* UIColor+Chameleon.m */,
+			);
+			name = Chameleon;
+			path = Vendor/Chameleon;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		60409B5C19AE0E0900C53B38 /* ColourCalculator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 60409B8F19AE0E0A00C53B38 /* Build configuration list for PBXNativeTarget "ColourCalculator" */;
+			buildPhases = (
+				60409B5919AE0E0900C53B38 /* Sources */,
+				60409B5B19AE0E0900C53B38 /* Resources */,
+				60409B5A19AE0E0900C53B38 /* Frameworks */,
+				3A4E1DCC1D655CCD00B917E0 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ColourCalculator;
+			productName = ColourCalculator;
+			productReference = 60409B5D19AE0E0900C53B38 /* ColourCalculator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		60409B7D19AE0E0A00C53B38 /* ColourCalculatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 60409B9219AE0E0A00C53B38 /* Build configuration list for PBXNativeTarget "ColourCalculatorTests" */;
+			buildPhases = (
+				60409B7A19AE0E0A00C53B38 /* Sources */,
+				60409B7B19AE0E0A00C53B38 /* Frameworks */,
+				60409B7C19AE0E0A00C53B38 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				60409B8419AE0E0A00C53B38 /* PBXTargetDependency */,
+			);
+			name = ColourCalculatorTests;
+			productName = ColourCalculatorTests;
+			productReference = 60409B7E19AE0E0A00C53B38 /* ColourCalculatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		60409B5519AE0E0900C53B38 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CC;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Aci Cartagena";
+				TargetAttributes = {
+					60409B5C19AE0E0900C53B38 = {
+						DevelopmentTeam = R3KN3W372K;
+					};
+					60409B7D19AE0E0A00C53B38 = {
+						TestTargetID = 60409B5C19AE0E0900C53B38;
+					};
+				};
+			};
+			buildConfigurationList = 60409B5819AE0E0900C53B38 /* Build configuration list for PBXProject "ColourCalculator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 60409B5419AE0E0900C53B38;
+			productRefGroup = 60409B5E19AE0E0900C53B38 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				60409B5C19AE0E0900C53B38 /* ColourCalculator */,
+				60409B7D19AE0E0A00C53B38 /* ColourCalculatorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		60409B5B19AE0E0900C53B38 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A1CBE1D1CB5C64100BD2CD0 /* Main.storyboard in Resources */,
+				60409BEC19AE11C600C53B38 /* nko_brightness_guide.png in Resources */,
+				CCD6BE0C1CC5BB88003928ED /* testQuestions.json in Resources */,
+				60409B7919AE0E0A00C53B38 /* Images.xcassets in Resources */,
+				60409BED19AE11C600C53B38 /* nko_brightness_guide@2x.png in Resources */,
+				6049B68B19B8C2CE000E66EA /* CalculatorButtonInitialData.plist in Resources */,
+				60409BEE19AE11C600C53B38 /* nko_colormap.png in Resources */,
+				60409B6B19AE0E0900C53B38 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60409B7C19AE0E0A00C53B38 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60409B8A19AE0E0A00C53B38 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		60409B5919AE0E0900C53B38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A5970591D32CED800E5A4F7 /* CCHandSetViewController.m in Sources */,
+				3A2A3FAD1CB9091400D8F323 /* CCTestResultViewController.m in Sources */,
+				6062CC1719BCA483005A0EF6 /* _DDVariableTerm.m in Sources */,
+				6062CC2019BCA483005A0EF6 /* DDTypes.m in Sources */,
+				3AA875221D3F60F200E3CF49 /* CCLabel.m in Sources */,
+				6062CC1D19BCA483005A0EF6 /* DDMathStringTokenizer.m in Sources */,
+				60409B7119AE0E0900C53B38 /* CCAppDelegate.m in Sources */,
+				6062CC1119BCA483005A0EF6 /* _DDNumberTerm.m in Sources */,
+				60AE55EA19C5E615004270C6 /* NSArray+Chameleon.m in Sources */,
+				6062CC0E19BCA483005A0EF6 /* _DDFunctionTerm.m in Sources */,
+				3A11C7D51CB74F960089609E /* CCAdminViewController.m in Sources */,
+				60AE55EB19C5E615004270C6 /* UIColor+CIELAB.m in Sources */,
+				60727C1019AE2D66004C447E /* CCCalculatorButton.m in Sources */,
+				6062CBD319BC238D005A0EF6 /* CCCalculatorNumberData.m in Sources */,
+				3A6DA9AA1CB73B7100B8D777 /* CCReportViewController.m in Sources */,
+				60A2ED9919BC088700266273 /* CCColorPickerViewController.m in Sources */,
+				60AE55E919C5E615004270C6 /* ChameleonStatusBar.m in Sources */,
+				3ADAF0971D34FA7400DEFBA5 /* CCRestViewController.m in Sources */,
+				6062CC1819BCA483005A0EF6 /* DDExpression.m in Sources */,
+				6062CC1B19BCA483005A0EF6 /* DDMathOperator.m in Sources */,
+				6049B68919B8C080000E66EA /* CCUserDataManager.m in Sources */,
+				6062CC1919BCA483005A0EF6 /* DDExpressionRewriter.m in Sources */,
+				6062CC1019BCA483005A0EF6 /* _DDNumberExpression.m in Sources */,
+				3ADAF0941D34EDB800DEFBA5 /* CCStartTestViewController.m in Sources */,
+				6062CC0C19BCA483005A0EF6 /* _DDFunctionEvaluator.m in Sources */,
+				3A012D291CB95FED0015E7A9 /* CCColorValueTableViewCell.m in Sources */,
+				60409BEF19AE11C600C53B38 /* NKOColorPickerView.m in Sources */,
+				6062CC1A19BCA483005A0EF6 /* DDMathEvaluator.m in Sources */,
+				6062CC1F19BCA483005A0EF6 /* DDParserTypes.m in Sources */,
+				6062CC0B19BCA483005A0EF6 /* _DDDecimalFunctions.m in Sources */,
+				6062CC1C19BCA483005A0EF6 /* DDMathStringToken.m in Sources */,
+				6062CC1319BCA483005A0EF6 /* _DDParserTerm.m in Sources */,
+				3A0212421D675D750042C9C4 /* CCInstructionPopUp.m in Sources */,
+				60409B6D19AE0E0900C53B38 /* main.m in Sources */,
+				6062CC0F19BCA483005A0EF6 /* _DDGroupTerm.m in Sources */,
+				60409B9819AE0E9500C53B38 /* CCCalculatorViewController.m in Sources */,
+				3AA8751F1D3DCDA100E3CF49 /* CCOutlinedString.m in Sources */,
+				6062CC1619BCA483005A0EF6 /* _DDVariableExpression.m in Sources */,
+				6062CC0D19BCA483005A0EF6 /* _DDFunctionExpression.m in Sources */,
+				6062CC1419BCA483005A0EF6 /* _DDPrecisionFunctionEvaluator.m in Sources */,
+				6062CC1219BCA483005A0EF6 /* _DDOperatorTerm.m in Sources */,
+				6062CC1E19BCA483005A0EF6 /* DDParser.m in Sources */,
+				6062CC1519BCA483005A0EF6 /* _DDRewriteRule.m in Sources */,
+				3A97277F1CCCFFFF006FDF00 /* MPColorTools.m in Sources */,
+				3A6D19FF1CC3F11E00478389 /* CCTestResultTableViewCell.m in Sources */,
+				60AE55DE19C5E556004270C6 /* UIColor+Chameleon.m in Sources */,
+				3AA763021CB3CE28005CCF76 /* CCCalibrateViewController.m in Sources */,
+				6062CC2119BCA483005A0EF6 /* NSString+DDMathParsing.m in Sources */,
+				3ABC37F51D5C81D0000D73C7 /* CCCameraViewController.m in Sources */,
+				3A174E621D68ED1700054CF6 /* CCEmotion_Test1Cell.m in Sources */,
+				60AE55EC19C5E615004270C6 /* UIViewController+Chameleon.m in Sources */,
+				6049B68619B8BCCF000E66EA /* CCCalculatorButtonData.m in Sources */,
+				3A11C7D81CB7DAC00089609E /* CCParticipantsTestResult.m in Sources */,
+				CC57ED691CDB3CBD00D0009B /* CCReporNViewController.m in Sources */,
+				6062CBD619BC295F005A0EF6 /* UIColor+Extra.m in Sources */,
+				3ADAF09A1D355FAE00DEFBA5 /* CCFinalViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60409B7A19AE0E0A00C53B38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60409B8C19AE0E0A00C53B38 /* ColourCalculatorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		60409B8419AE0E0A00C53B38 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 60409B5C19AE0E0900C53B38 /* ColourCalculator */;
+			targetProxy = 60409B8319AE0E0A00C53B38 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3A1CBE1F1CB5C64100BD2CD0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A1CBE1E1CB5C64100BD2CD0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		60409B6919AE0E0900C53B38 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				60409B6A19AE0E0900C53B38 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		60409B8819AE0E0A00C53B38 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				60409B8919AE0E0A00C53B38 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		60409B8D19AE0E0A00C53B38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Joshua Berger (R3KN3W372K)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Joshua Berger (R3KN3W372K)";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_BITCODE = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "464476b8-e545-463c-81d2-3297a813ed56";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		60409B8E19AE0E0A00C53B38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Joshua Berger (R3KN3W372K)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Joshua Berger (R3KN3W372K)";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PROVISIONING_PROFILE = "464476b8-e545-463c-81d2-3297a813ed56";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		60409B9019AE0E0A00C53B38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ColourCalculator/ColourCalculator-Prefix.pch";
+				INFOPLIST_FILE = "ColourCalculator/ColourCalculator-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 2;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		60409B9119AE0E0A00C53B38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ColourCalculator/ColourCalculator-Prefix.pch";
+				INFOPLIST_FILE = "ColourCalculator/ColourCalculator-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 2;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		60409B9319AE0E0A00C53B38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ColourCalculator.app/ColourCalculator";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ColourCalculator/ColourCalculator-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ColourCalculatorTests/ColourCalculatorTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		60409B9419AE0E0A00C53B38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ColourCalculator.app/ColourCalculator";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ColourCalculator/ColourCalculator-Prefix.pch";
+				INFOPLIST_FILE = "ColourCalculatorTests/ColourCalculatorTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		60409B5819AE0E0900C53B38 /* Build configuration list for PBXProject "ColourCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60409B8D19AE0E0A00C53B38 /* Debug */,
+				60409B8E19AE0E0A00C53B38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		60409B8F19AE0E0A00C53B38 /* Build configuration list for PBXNativeTarget "ColourCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60409B9019AE0E0A00C53B38 /* Debug */,
+				60409B9119AE0E0A00C53B38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		60409B9219AE0E0A00C53B38 /* Build configuration list for PBXNativeTarget "ColourCalculatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60409B9319AE0E0A00C53B38 /* Debug */,
+				60409B9419AE0E0A00C53B38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 60409B5519AE0E0900C53B38 /* Project object */;
+}
