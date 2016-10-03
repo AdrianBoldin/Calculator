@@ -63,7 +63,7 @@ typedef enum : NSUInteger {
 //temp data
 @property (strong, nonatomic) NSMutableArray *calculatorDisplayTexts;
 @property (strong, nonatomic) NSMutableArray *calculatorEquationTexts;
-
+@property (strong, nonatomic) NSMutableArray *faceMA;
 @property (strong, nonatomic) NSNumber *previousNumber;
 @property (strong, nonatomic) NSString *previousNumberString;
 
@@ -86,18 +86,21 @@ typedef enum : NSUInteger {
 
 @property(strong, nonatomic)NSMutableAttributedString *numberTempString;
 @property(strong, nonatomic)NSDictionary *testQuestionDic;
-@property (nonatomic)int questionOrderNumber;
+
+@property (nonatomic)int questionCount;
+@property (nonatomic)int questionNum;
 @property (nonatomic)CFTimeInterval questionTimewhenfirstloaded;
 @property  (nonatomic)CFTimeInterval questionStarttime;
 @property(nonatomic)CFTimeInterval time1;
 @property(nonatomic)CFTimeInterval time3;
 @property(nonatomic)CFTimeInterval time2;
 @property(nonatomic)CFTimeInterval time4;
-@property (nonatomic) int questionNum;
+@property (nonatomic)CFTimeInterval timeOfMeasurement;
 @property (nonatomic) Boolean colorflag;
 @property (nonatomic) int checknum;
 @property (nonatomic)int practice;
 @property (nonatomic) int i;
+@property (nonatomic) int j;
 @end
 
 @implementation CCCalculatorViewController
@@ -115,36 +118,14 @@ typedef enum : NSUInteger {
 
 -(void)processedImageReady:(AFDXDetector *)detector image:(UIImage *)image faces:(NSDictionary *)faces atTime:(NSTimeInterval)time;
 {
-    //iterate on the valuses of the faces dictionary
-    CCParticipantsTestResult *faceEmotionResult = [[CCParticipantsTestResult alloc]init];
-    
     for (AFDXFace *face in [faces allValues])
     {
-        NSString *emotionwithTests = [[NSString alloc]init];
-        if(self.temppageorder == 0){
         
-            emotionwithTests = @"Test1Emotion";
-        }
-        if(self.temppageorder == 1){
-            
-            emotionwithTests = @"Test2Emotion";
-        }
-        if(self.temppageorder == 2){
-            
-            emotionwithTests = @"Test3Emotion";
-        }
+        CFTimeInterval captureOfMeasurement = CACurrentMediaTime();
+        self.timeOfMeasurement = captureOfMeasurement - self.questionTimewhenfirstloaded;
         
-        [faceEmotionResult createDictionary:[NSString stringWithFormat:@"%@Joy%d",emotionwithTests, self.i] value:[NSString stringWithFormat:@"%.2f",face.emotions.joy]];
-        [faceEmotionResult createDictionary:[NSString stringWithFormat:@"%@Anger%d",emotionwithTests,self.i] value:[NSString stringWithFormat:@"%.2f",face.emotions.anger]];
-        [faceEmotionResult createDictionary:[NSString stringWithFormat:@"%@Contempt%d",emotionwithTests,self.i] value:[NSString stringWithFormat:@"%.2f",face.emotions.contempt]];
-        [faceEmotionResult createDictionary:[NSString stringWithFormat:@"%@Disgust%d",emotionwithTests,self.i] value:[NSString stringWithFormat:@"%.2f",face.emotions.disgust]];
-        [faceEmotionResult createDictionary:[NSString stringWithFormat:@"%@Fear%d",emotionwithTests,self.i] value:[NSString stringWithFormat:@"%.2f",face.emotions.fear]];
-        [faceEmotionResult createDictionary:[NSString stringWithFormat:@"%@Sadness%d",emotionwithTests,self.i] value:[NSString stringWithFormat:@"%.2f",face.emotions.sadness]];
-        [faceEmotionResult createDictionary:[NSString stringWithFormat:@"%@Suprise%d",emotionwithTests,self.i] value:[NSString stringWithFormat:@"%.2f",face.emotions.surprise]];
-        [faceEmotionResult createDictionary:[NSString stringWithFormat:@"%@Engagement%d",emotionwithTests,self.i] value:[NSString stringWithFormat:@"%.2f",face.emotions.engagement]];
-        [faceEmotionResult createDictionary:[NSString stringWithFormat:@"%@Valence%d",emotionwithTests,self.i] value:[NSString stringWithFormat:@"%.2f",face.emotions.valence]];
-
-        self.i++;
+        NSArray *array = [NSArray arrayWithObjects:[NSString stringWithFormat:@"%.2f",self.timeOfMeasurement],[NSString stringWithFormat:@"%.2f",face.emotions.joy],[NSString stringWithFormat:@"%.2f",face.emotions.anger],[NSString stringWithFormat:@"%.2f",face.emotions.contempt],[NSString stringWithFormat:@"%.2f",face.emotions.disgust],[NSString stringWithFormat:@"%.2f",face.emotions.fear],[NSString stringWithFormat:@"%.2f",face.emotions.sadness],[NSString stringWithFormat:@"%.2f",face.emotions.surprise],[NSString stringWithFormat:@"%.2f",face.emotions.engagement],[NSString stringWithFormat:@"%.2f",face.emotions.valence], nil];
+        [self.faceMA addObjectsFromArray:array];
         
     }
     
@@ -174,7 +155,7 @@ typedef enum : NSUInteger {
     
     //create a new detector, set the processing frame rate in frames per second, and set the license string
     self.detector = [[AFDXDetector alloc]initWithDelegate:self usingCamera:AFDX_CAMERA_FRONT maximumFaces:1];
-    self.detector.maxProcessRate = 2;
+    self.detector.maxProcessRate = 5;
     self.detector.licenseString = YOUR_AFFDEX_LICENSE_STRING_GOES_HERE;
     
     //turn on gender and glasses
@@ -216,9 +197,8 @@ typedef enum : NSUInteger {
         dispatch_queue_t q = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
         dispatch_async(q, ^{
             [self processedImageReady:detector image:image faces:faces atTime:time];
-
+            
         });
-        
 
     }
 }
@@ -233,6 +213,8 @@ typedef enum : NSUInteger {
      
          // create the detector just before the view appears
         self.i=0;
+        //self.j = 0;
+        self.faceMA = [[NSMutableArray alloc]init];
         [self createDetector];
     }
     
@@ -265,6 +247,27 @@ typedef enum : NSUInteger {
         self.incongruentcolorflag = false;
         self.blackflag = false;
     }
+    if(self.temppageorder == 0 ){
+        self.questionCount =1 ;
+        self.questionNum = 1;
+    }else if(self.temppageorder ==1){
+        self.questionCount = 31;
+        self.questionNum = 31;
+    }else{
+        self.questionCount = 61;
+        self.questionNum = 61;
+    }
+    
+    if(self.practiceflag == true){
+        self.noumberOfTest.text = @"Practice Test";
+    }else{
+        
+        CCAppDelegate *ccAppDelegate = (CCAppDelegate *)[[UIApplication sharedApplication]delegate];
+        self.noumberOfTest.text = [NSString stringWithFormat:@"TEST%d",ccAppDelegate.surveycalltimes + 1];
+        CCParticipantsTestResult *ccParticipantsTestResult = [[CCParticipantsTestResult alloc]init];
+        NSString *startTime = @"0.00";
+        [ccParticipantsTestResult createDictionary:[NSString stringWithFormat:@"Q%dStartTime",self.questionCount] value: startTime];
+    }
     
     [self conditionSetup];
     [self viewFrame];
@@ -274,8 +277,6 @@ typedef enum : NSUInteger {
     self.numberDataArray = [[CCUserDataManager sharedManager]numberDisplayData];
     
     [self setup];
-    
-    //self.questionNum = 1;
 
 }
 
@@ -292,32 +293,39 @@ typedef enum : NSUInteger {
     self.instructionview.alpha = 0.8;
     NSArray *stringarray;
     if(self.practiceflag == false){
-         stringarray = [NSArray arrayWithObjects:@"INSTRUCTIONS:", @"1. There are three tests of 30 questions each.", @"2. You will be given the option to rest between each one.",@"3. The calculator's colours will be randomly set, for each test, to one of three conditions: Neutral(Black), Congruent(Colours you have picked), Incongruent(Colours complementary to those you have picked)",nil];
+         stringarray = [NSArray arrayWithObjects:@"Dear Participant,", @"You are about to undertake the main part of the study. PLEASE READ THESE INSTRUCTIONS CAREFULLY.", @"(1) You will be taking 3 separate arithmetic tests, similar to the practice test. Each test is 30 questions in length.",@"(2) You may rest between tests.", @"(3) For each test, you MUST use the calculator for ALL questions, regardless of whether you can calculate them without it.", @"(4) For each test, the calculator will be displayed, randomly, in one of the three font colour settings. I.e.",@"•	your synesthetic colours\n•	different colours to the ones you have chosen, and \n•	black.",@"\n\The order in which you receive the font colour settings changes between each test but not within it. The order of the tests is randomised between participants, so you may receive a different order to what you received in the practice test.",@"!!! Important !!! Please Do NOT cover your face during the testing with your hands or other objects. Place your non-dominant hand to the side, on your lap or the table. If you notice you have placed your hand on your face, by accident, remove your hand from your face and continue the test. ",@"Please note: wearing glasses does not interfere with the test, so please wear them if necessary. ",nil];
     }else{
-        stringarray = [NSArray arrayWithObjects:@"INSTRUCTIONS:", @"1. Please read the questions fully.", @"2. For all questions use the calculator to solve.",@"3. Use the separate 'answer' pad to type in the answer.", @"4. To submit and move on press next.",nil];
+        stringarray = [NSArray arrayWithObjects:@"Your next task is to take the practise test and familiarise yourself with the layout of the test.", @"(1) Read the arithmetic question that appears in the top left of the grey column.", @"(2) You MUST use the calculator, below on the left side, to solve the question.",@"(3) the answer will appear in the box… (put in where exactly it shows up)", @"To enter your answer, shift your attention to the right side. Transcribe the answer exactly, by using the answer keypad in the white column on the right hand side.", @"(4) When you have transcribed the answer, press the ‘next’ tile to accept and move on to the next practice question.",@"(5) On completion of the last practice question, press the ‘Finish test’ tile.",@"[Note: During this practise test the calculator will be display digits to you in three different font colour settings. Digits will be displayed in", @"•	your synesthetic colours\n•	different colours to the ones you have chosen, and \n•	black.",nil];
     }
     
     for(int i = 1; i<stringarray.count + 1 ;i++){
         
-        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(20, 60*i, 650, 30)];
-        if(i == 4 && self.practiceflag == false){
-            label = [[UILabel alloc]initWithFrame:CGRectMake(20, 60*i, 650, 70)];
-            label.lineBreakMode = NSLineBreakByWordWrapping;
-            label.numberOfLines = 3;
+        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(20, 60*i, 650, 80)];
+        if(self.practiceflag == false && i == 8){
+            label.frame = CGRectMake(20, 60*i, 650, 120);
+        }else if(self.practiceflag == false && i == 9){
+            label.frame = CGRectMake(20, 65*i, 650, 120);
+        }else{
+            if(self.practiceflag == false && i == 10){
+                label.frame = CGRectMake(20, 67*i, 650, 120);
+            }
         }
+        label.lineBreakMode = NSLineBreakByWordWrapping;
+        label.numberOfLines = 4;
         label.textColor = [UIColor whiteColor];
         label.text = [stringarray objectAtIndex:i-1];
         if(i == 1){
-            [label setFont:[UIFont systemFontOfSize:24]];
+            [label setFont:[UIFont systemFontOfSize:20]];
         }else{
             [label setFont:[UIFont systemFontOfSize:19]];
+
         }
         
         [self.instructionview addSubview:label];
     }
     
     
-    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(self.instructionview.frame.size.width-40, self.instructionview.frame.origin.y-20, 30, 30)];
+    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(self.instructionview.frame.size.width-40, 40, 30, 30)];
     [button setTitle:@"X" forState:UIControlStateNormal];
     [button setTintColor:[UIColor whiteColor]];
     [button addTarget:self action:@selector(buttonPressed) forControlEvents:UIControlEventAllEvents];
@@ -368,8 +376,6 @@ typedef enum : NSUInteger {
                 [button setAttributedTitle: [self symbolStr:button.buttonData.displayNumberColor String:button.buttonData.displayString] forState:UIControlStateNormal];
             }
         }
-        self.questionOrderNumber = 1;
-        self.questionNum = 1;
     }
     if(self.incongruentcolorflag == true){
         
@@ -386,8 +392,6 @@ typedef enum : NSUInteger {
             
             
         }
-        self.questionOrderNumber = 31;
-        self.questionNum = 31;
         
     }
     if(self.blackflag == true){
@@ -402,8 +406,6 @@ typedef enum : NSUInteger {
             }
             
         }
-        self.questionOrderNumber = 61;
-        self.questionNum = 61;
     }
     
     self.numberColorDictionary = [[CCUserDataManager sharedManager]getNumberColorDictionary];
@@ -416,15 +418,14 @@ typedef enum : NSUInteger {
     
     self.inputTextView.text = @"";
     self.outputTextView.text = @"";
-    //self.questionOrderNumber = 1;
     CCParticipantsTestResult *ccparticipantsTestResult = [[CCParticipantsTestResult alloc]init];
     self.testQuestionDic = [[NSDictionary alloc]init];
     self.testQuestionDic = [ccparticipantsTestResult readingStringFromQuestionFile];
     
     if(self.practiceflag == false){
        
-        self.topLabel.text = [NSString stringWithFormat:@"QUESTION-%d",self.questionOrderNumber];
-        NSString *string = [[NSString alloc]initWithFormat:@"Q%d",self.questionOrderNumber];
+        self.topLabel.text = [NSString stringWithFormat:@"Q%d",self.questionCount];
+        NSString *string = [[NSString alloc]initWithFormat:@"Q%d",self.questionCount];
         self.testQuestions.text = [self.testQuestionDic objectForKey:string];
         self.conditionLabel.hidden = true;
     }
@@ -483,7 +484,7 @@ typedef enum : NSUInteger {
 
     if(self.practiceflag == true){
         
-        self.testQuestions.text = @" 0 + 1 = ";
+        self.testQuestions.text = @" - 453 x (329 + 47)÷3 = ";
         if(self.incongruentcolorflag == true){
             
             self.testQuestions.text = @" 0 + 2 = ";
@@ -521,6 +522,14 @@ typedef enum : NSUInteger {
         _attributedText = [[NSMutableAttributedString alloc] init];
     }
     return _attributedText;
+}
+
+- (NSMutableAttributedString *)numberTempString
+{
+    if (!_numberTempString){
+        _numberTempString = [[NSMutableAttributedString alloc] init];
+    }
+    return _numberTempString;
 }
 
 - (NSMutableAttributedString *)temp;
@@ -572,7 +581,7 @@ typedef enum : NSUInteger {
         CFTimeInterval Time1 = self.time2-self.time1;
         NSString *readingtime = [[NSString alloc]initWithFormat:@"%.2f",Time1];
         CCParticipantsTestResult *ccParticipantsTestResult = [[CCParticipantsTestResult alloc]init];
-        [ccParticipantsTestResult createDictionary:[NSString stringWithFormat:@"Q%dReadingtime",self.questionNum] value:readingtime];
+        [ccParticipantsTestResult createDictionary:[NSString stringWithFormat:@"Q%dReadingtime",self.questionCount] value:readingtime];
     }
     
     self.checknum++;
@@ -625,16 +634,19 @@ typedef enum : NSUInteger {
     if (self.calculatorDisplayTexts.count > 0){
         NSString *toBeRemoved = self.calculatorDisplayTexts[0];
         [self.calculatorDisplayTexts removeObjectAtIndex:0];
-        
         NSString *equationToBeRemoved = self.calculatorEquationTexts[0];
         [self.calculatorEquationTexts removeObjectAtIndex:0];
+        
         self.equationText = [self.equationText substringToIndex:self.equationText.length-equationToBeRemoved.length];
         
+        self.attributedText = self.inputTextView.attributedText;
         self.attributedText = [[self.attributedText attributedSubstringFromRange:NSMakeRange(0,self.attributedText.length-toBeRemoved.length)] mutableCopy];
+        
         self.inputTextView.attributedText = self.attributedText;
         self.inputTextView.textAlignment = NSTextAlignmentRight;
         
         self.outputTextView.text = @"";
+        self.inputflag = false;
     }
 }
 
@@ -655,7 +667,6 @@ typedef enum : NSUInteger {
     }
     
     [self.attributedText appendAttributedString:buttonAttributedText];
-
     [self.calculatorDisplayTexts insertObject:buttonAttributedText.string atIndex:0];
     [self.calculatorEquationTexts insertObject:[button equationString] atIndex:0];
     [self.attributedText addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"AppleSDGothicNeo-Regular" size:27] range:NSMakeRange(0, self.attributedText.string.length)];
@@ -664,7 +675,7 @@ typedef enum : NSUInteger {
     self.tempattributedText = self.attributedText;
     
     self.equationText = [self.equationText stringByAppendingString:[button equationString]];
-   
+   NSLog(@"%@",self.equationText);
 }
 
 - (NSMutableAttributedString *)formatOutputStringForAnswerforinputtext:(NSNumber *)answer
@@ -772,8 +783,10 @@ typedef enum : NSUInteger {
     defaultEvaluator.angleMeasurementMode = self.mode == CCCalculatorModeDegree ? DDAngleMeasurementModeDegrees : DDAngleMeasurementModeRadians;
     [defaultEvaluator setUsesHighPrecisionEvaluation:YES];
     NSNumber *answer = [self.equationText numberByEvaluatingString];
-    self.equationText = [answer stringValue];
+    
     if (answer){
+        //self.equationText = [answer stringValue];
+        
         self.outputTextView.attributedText = [self formatOutputStringForAnswer:answer];
         self.outputTextView.textAlignment = NSTextAlignmentRight;
         self.tempattributedText = [self formatOutputStringForAnswerforinputtext:answer];
@@ -798,7 +811,7 @@ typedef enum : NSUInteger {
         CFTimeInterval Time2 = self.time3-self.time2;
         NSString *workingtime = [[NSString alloc]initWithFormat:@"%.2f",Time2];
         CCParticipantsTestResult *ccParticipantsTestResult = [[CCParticipantsTestResult alloc]init];
-        [ccParticipantsTestResult createDictionary:[NSString stringWithFormat:@"Q%dWorkingtime",self.questionNum] value:workingtime];
+        [ccParticipantsTestResult createDictionary:[NSString stringWithFormat:@"Q%dWorkingtime",self.questionCount] value:workingtime];
     }
     
     NSAttributedString *string = [[NSAttributedString alloc]init];
@@ -809,32 +822,27 @@ typedef enum : NSUInteger {
     self.time3flag = true;
 }
 
-- (IBAction)nextButtonPressed:(id)sender {
+- (IBAction)nextButtonPressed:(UIButton*)sender {
     
     if(self.practiceflag == true){
-        if(self.practice == 0 || self.practice == 1){
-            self.conditionLabel.text = @"Congruent";
-            if(self.practice == 0){
-               self.testQuestions.text = @" 0 + 2 = ";
-            }
-            if(self.practice == 1){
-                self.testQuestions.text = @" 0 + 3 = ";
-            }
+        if(self.practice == 0){
+            self.topLabel.text = @"Q2";
+            self.testQuestions.text = @" 2948 x 1329 = ";
             self.incongruentcolorflag = false;
             self.congruentcolorflag = true;
             self.blackflag = false;
+            
         }
-        if(self.practice == 2 || self.practice == 3 || self.practice == 4){
-            self.conditionLabel.text = @"Incongruent";
+        if(self.practice == 1 || self.practice == 2){
+            
             switch (self.practice) {
+                case 1:
+                    self.topLabel.text = @"Q3";
+                    self.testQuestions.text = @" 24-4x(13.25+84.37) = ";
+                    break;
                 case 2:
-                    self.testQuestions.text = @" 0 + 1 = ";
-                    break;
-                case 3:
-                    self.testQuestions.text = @" 0 + 2 = ";
-                    break;
-                case 4:
-                    self.testQuestions.text = @" 0 + 3 = ";
+                    self.topLabel.text = @"Q4";
+                    self.testQuestions.text = @" 5469 x 1098 = ";
                     break;
                     
                 default:
@@ -844,19 +852,18 @@ typedef enum : NSUInteger {
             self.congruentcolorflag = false;
             self.blackflag = false;
         }
-        if(self.practice == 5 || self.practice == 6 || self.practice == 7){
-            self.conditionLabel.text = @"Black";
+        if(self.practice == 3 || self.practice == 4){
+            
             switch (self.practice) {
-                case 5:
-                    self.testQuestions.text = @" 0 + 1 = ";
+                case 3:
+                    self.topLabel.text = @"Q5";
+                    self.testQuestions.text = @" 3x(24.65-94.63) - 784 = ";
                     break;
-                case 6:
-                    self.testQuestions.text = @" 0 + 2 = ";
+                case 4:
+                    self.topLabel.text = @"Q6";
+                    self.testQuestions.text = @" 3967 x 2650 = ";
                     break;
-                case 7:
-                    self.testQuestions.text = @" 0 + 3 = ";
-                    break;
-                    
+                
                 default:
                     break;
             }
@@ -866,19 +873,21 @@ typedef enum : NSUInteger {
         }
         [self conditionSetup];
         self.practice ++;
-        if(self.practice>7){
+        if(self.practice>5){
             [self.nextbtn setTitle:@"Finish" forState:UIControlStateNormal];
             CCStartTestViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"startTestVC"];
             [self presentViewController:viewController animated:YES completion:nil];
         }
     }else{
         
+        
         if([self.nextbtn.currentTitle isEqualToString:@"Finish Test"]){
             
             [self finishTest];
             return;
         }
-        self.topLabel.text = [NSString stringWithFormat:@"QUESTION-%d",self.questionOrderNumber+1];
+        self.questionCount++;
+        self.topLabel.text = [NSString stringWithFormat:@"Q%d",self.questionCount];
         self.conditionLabel.hidden = true;
         self.time4 = CACurrentMediaTime();
         
@@ -886,23 +895,23 @@ typedef enum : NSUInteger {
         NSString *starttime = [[NSString alloc]initWithFormat:@"%.2f",self.questionStarttime];
         
         CCParticipantsTestResult *ccParticipantsTestResult = [[CCParticipantsTestResult alloc]init];
-        [ccParticipantsTestResult createDictionary:[NSString stringWithFormat:@"Q%dStartTime",self.questionNum] value:starttime];
+        [ccParticipantsTestResult createDictionary:[NSString stringWithFormat:@"Q%dStartTime",self.questionCount] value:starttime];
         self.time3flag = false;
         self.time2flag = false;
-        self.questionOrderNumber ++;
         
         [self savetestresult];
         
         _numberTempString = [[NSMutableAttributedString alloc]init];
-        NSString *string = [[NSString alloc]initWithFormat:@"Q%d",self.questionOrderNumber];
+        NSString *string = [[NSString alloc]initWithFormat:@"Q%d",self.questionCount];
         self.testQuestions.text = [self.testQuestionDic objectForKey:string];
         
         self.time1 = CACurrentMediaTime();
-        if(self.questionOrderNumber==30 || self.questionOrderNumber == 60 || self.questionOrderNumber == 90){
+        if(self.questionCount==30 || self.questionCount == 60 || self.questionCount == 90){
             
             [self.nextbtn setTitle:@"Finish Test" forState:UIControlStateNormal];
             
         }
+        
         self.questionNum++;
         
     }
@@ -915,9 +924,9 @@ typedef enum : NSUInteger {
 }
 
 - (IBAction)delete:(id)sender {
-    
-    self.answerLabel.text = @"";
-    _numberTempString = [[NSMutableAttributedString alloc]init];
+
+    self.answerLabel.attributedText = [[self.answerLabel.attributedText attributedSubstringFromRange:NSMakeRange(0,self.answerLabel.attributedText.length-1)] mutableCopy];
+    _numberTempString = [[_numberTempString attributedSubstringFromRange:NSMakeRange(0, _numberTempString.length-1)]mutableCopy];
 }
 
 
@@ -947,7 +956,13 @@ typedef enum : NSUInteger {
     self.time4 = CACurrentMediaTime();
     self.time3flag = false;
     self.time2flag = false;
-    
+    if(self.temppageorder == 0){
+      [[NSUserDefaults standardUserDefaults]setObject:self.faceMA forKey:@"faceResult0"];
+    }else if(self.temppageorder == 1){
+        [[NSUserDefaults standardUserDefaults]setObject:self.faceMA forKey:@"faceResult1"];
+    }else {
+        [[NSUserDefaults standardUserDefaults]setObject:self.faceMA forKey:@"faceResult2"];
+    }
     
     CCAppDelegate *ccAppDelegate = (CCAppDelegate *)[[UIApplication sharedApplication]delegate];
     self.temppageorder = ccAppDelegate.surveycalltimes;

@@ -42,7 +42,7 @@ typedef enum : NSUInteger {
 @property (strong, nonatomic) UIColor *selectedColor;
 @property (nonatomic) Boolean colorPickerflag;
 @property (assign, nonatomic) BOOL buttonChange;
-
+@property (nonatomic) BOOL initColor;
 
 
 @end
@@ -85,23 +85,21 @@ typedef enum : NSUInteger {
     self.instructionview.backgroundColor = [UIColor blackColor];
     self.instructionview.alpha = 0.8;
     
-    NSArray *stringarray = [NSArray arrayWithObjects:@"INSTRUCTIONS:",@"To pick your colours:", @"1. Press a number or symbol on the keypad", @"2. The number or symbol will apper in the lager tile above the keypad.",@"3. Using the colour picker, select hue and saturation",@"4. To change a colour, simply re-press that number or symbol on the keypad.", @"5. When you have selected ALL your colours press the 'next' tile.",nil];
+    NSArray *stringarray = [NSArray arrayWithObjects:@"Your first task is to select the synesthetic colours that match your digits, by the following steps:", @"(1) Select a digit by pressing on it’s tile on the keypad, above the colour palette. The selected digit will appear in the larger tile beside the palette.", @"(2) Choose the colour that matches your digit by gliding your finger around the colour palette. You can make it darker or lighter by using the sliding bar that sits beneath the palette. Check the colours’ shade for each digit by using the slider.",@"(3) Check that the colour matches your digit by referring to the larger tile that sits beside the palette.",@"(4) Repeat this process for all the digits and symbols displayed on the keypad. [Note: if you do not have a colour for a digit or symbol, set the colour to black]", @"(5) When you have completed this process, double check that the keypad has the right colours, then press ‘submit’ to proceed.",nil];
     for(int i = 1; i<stringarray.count + 1 ;i++){
         
-        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(20, 60*i, 650, 60)];
+        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(20, 80*i, 650, 80)];
         label.textColor = [UIColor whiteColor];
         label.text = [stringarray objectAtIndex:i-1];
-        if(i == 1){
-           [label setFont:[UIFont systemFontOfSize:24]];
-        }else{
-           [label setFont:[UIFont systemFontOfSize:19]];
-        }
         
+        [label setFont:[UIFont systemFontOfSize:18]];
+        label.numberOfLines = 3;
+       
         [self.instructionview addSubview:label];
     }
     
     
-    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(self.instructionview.frame.size.width-40, self.instructionview.frame.origin.y-20, 30, 30)];
+    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(self.instructionview.frame.size.width-40, self.instructionview.frame.origin.y-50, 30, 30)];
     [button setTitle:@"X" forState:UIControlStateNormal];
     [button setTintColor:[UIColor whiteColor]];
     [button addTarget:self action:@selector(buttonPressed) forControlEvents:UIControlEventAllEvents];
@@ -134,7 +132,7 @@ typedef enum : NSUInteger {
     
     self.calculatorLabel.layer.masksToBounds = YES;
     self.calculatorLabel.layer.cornerRadius = 5.0f;
-    self.calculatorLabel.textColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
+    self.calculatorLabel.textColor = self.selectedColor;
     
     //self.calculatorLabel.text = self.buttonData.buttonDisplayString;
     self.selectedColor = self.calculatorLabel.textColor;
@@ -224,14 +222,14 @@ typedef enum : NSUInteger {
     }
     
     if(self.handRightFlag == true){
-        self.keypadX = [NSLayoutConstraint constraintWithItem:self.cotentView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1.5f constant:0.0f];
+        self.keypadX = [NSLayoutConstraint constraintWithItem:self.calculatorLabel attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:0.5f constant:0.0f];
         [self updateViewConstraints];
         
         [self.view addConstraint:self.keypadX];
 
     }else{
         
-        self.keypadX = [NSLayoutConstraint constraintWithItem:self.cotentView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:0.5f constant:0.0f];
+        self.keypadX = [NSLayoutConstraint constraintWithItem:self.calculatorLabel attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1.5f constant:0.0f];
         [self updateViewConstraints];
         
         [self.view addConstraint:self.keypadX];
@@ -240,17 +238,30 @@ typedef enum : NSUInteger {
 
 -(void)longPress:(UITapGestureRecognizer*)sender{
     
-    NSDictionary *buttonAttributes = @{
-                                       NSForegroundColorAttributeName : [UIColor whiteColor],
-                                       NSStrokeColorAttributeName : [UIColor blackColor],
-                                       NSStrokeWidthAttributeName : [NSNumber numberWithFloat:-2.0]
-                                       };
-    NSDictionary *symbolAttributes = @{
-                                       NSForegroundColorAttributeName : [UIColor blackColor]
-                                       };
-    
     if(sender.state){
         self.tempButton = (UIButton *)sender.view;
+        [self.tempButton setTitleColor:self.selectedColor forState:UIControlStateNormal];
+        NSDictionary *buttonAttributes = @{
+                                           NSForegroundColorAttributeName : self.selectedColor,
+                                           NSStrokeColorAttributeName : [UIColor blackColor],
+                                           NSStrokeWidthAttributeName : [NSNumber numberWithFloat:-2.0]
+                                           };
+        NSDictionary *symbolAttributes = @{
+                                           NSForegroundColorAttributeName: self.selectedColor
+                                           };
+        
+        if(self.tempButton!=nil){
+            
+            NSAttributedString *str = [[NSAttributedString alloc]initWithString:self.tempButton.currentTitle attributes:buttonAttributes];
+            NSAttributedString *nonOutlinedStr = [[NSAttributedString alloc]initWithString:self.tempButton.currentTitle attributes:symbolAttributes];
+            if(self.tempButton.tag < 10){
+                
+                [self.tempButton setAttributedTitle:str forState:UIControlStateNormal];
+            }else{
+                [self.tempButton setAttributedTitle:nonOutlinedStr forState:UIControlStateNormal];
+            }
+        }
+
         self.calculatorLabel.text = [NSString stringWithFormat:@"%@",self.tempButton.currentTitle];
         if(self.tempButton.tag<10){
             
@@ -275,6 +286,12 @@ typedef enum : NSUInteger {
 
 - (void)setupColorPicker
 {
+    if(_initColor == false){
+        self.selectedColor = [UIColor whiteColor];
+    }else{
+        self.selectedColor = self.calculatorLabel.textColor;
+    }
+    
     
     //Color did change block declaration
     __weak typeof(self) weakSelf = self;
@@ -318,18 +335,20 @@ typedef enum : NSUInteger {
     
     if(self.handRightFlag == false){
 
-        self.colourPickerViewX = [NSLayoutConstraint constraintWithItem:self.colourPickerView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1.5f constant:0.0f];
+        self.colourPickerViewX = [NSLayoutConstraint constraintWithItem:self.colourPickerView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:0.7f constant:0.0f];
         [self.view addConstraint:self.colourPickerViewX];
         
-        self.colorPickerView = [[NKOColorPickerView alloc] initWithFrame:CGRectMake(0, -15, self.colourPickerView.frame.size.width, self.colourPickerView.frame.size.height*1.1) color:[UIColor blackColor] andDidChangeColorBlock:colorDidChangeBlock];
+        self.colorPickerView = [[NKOColorPickerView alloc] initWithFrame:CGRectMake(0, -15, self.colourPickerView.frame.size.width, self.colourPickerView.frame.size.height*1.1) color: self.selectedColor andDidChangeColorBlock:colorDidChangeBlock];
         [self.colourPickerView addSubview:self.colorPickerView];
+        _initColor = true;
     }else{
        
-        self.colourPickerViewX = [NSLayoutConstraint constraintWithItem:self.colourPickerView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:0.5f constant:0.0f];
+        self.colourPickerViewX = [NSLayoutConstraint constraintWithItem:self.colourPickerView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1.3f constant:0.0f];
         [self.view addConstraint:self.colourPickerViewX];
         
-        self.colorPickerView = [[NKOColorPickerView alloc] initWithFrame:CGRectMake(0, -15, self.colourPickerView.frame.size.width, self.colourPickerView.frame.size.height*1.1) color:[UIColor blackColor] andDidChangeColorBlock:colorDidChangeBlock];
+        self.colorPickerView = [[NKOColorPickerView alloc] initWithFrame:CGRectMake(0, -15, self.colourPickerView.frame.size.width, self.colourPickerView.frame.size.height*1.1) color:[UIColor whiteColor] andDidChangeColorBlock:colorDidChangeBlock];
         [self.colourPickerView addSubview:self.colorPickerView];
+        _initColor = true;
     }
     
     self.calculatorLabel.textColor = self.selectedColor;
@@ -368,7 +387,6 @@ typedef enum : NSUInteger {
     
     self.buttonData = self.buttonDataArray[tag];
     [[CCUserDataManager sharedManager] updateButtonColor:self.selectedColor forButtonData:self.buttonData];
-    
     CCParticipantsTestResult *ccParticipantsTestResult = [[CCParticipantsTestResult alloc]init];
     
     [self.colorPickerView removeFromSuperview];

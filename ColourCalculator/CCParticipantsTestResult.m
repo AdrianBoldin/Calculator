@@ -24,6 +24,7 @@
     
     CCAppDelegate *ccAppDelegate = (CCAppDelegate *)[[UIApplication sharedApplication]delegate];
     [ccAppDelegate.participantTestInfo addEntriesFromDictionary:dictionary];
+    NSLog(@"%@",ccAppDelegate.participantTestInfo);
     if(self.flag == true){
 
         [self writeJosnStringTofile:ccAppDelegate.participantTestInfo];

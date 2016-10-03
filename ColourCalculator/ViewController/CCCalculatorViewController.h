@@ -27,5 +27,6 @@
 @property (nonatomic)Boolean time3flag;
 @property (nonatomic)Boolean time2flag;
 @property (weak, nonatomic) IBOutlet UIImageView *cameraView;
+@property (weak, nonatomic) IBOutlet UILabel *noumberOfTest;
 
 @end

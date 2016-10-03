@@ -10,6 +10,7 @@
 
 @interface CCEmotion_Test1Cell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *measurement;
 @property (weak, nonatomic) IBOutlet UILabel *times;
 @property (weak, nonatomic) IBOutlet UILabel *anger;
 @property (weak, nonatomic) IBOutlet UILabel *contempt;

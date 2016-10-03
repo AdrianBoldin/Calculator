@@ -163,10 +163,11 @@ CGFloat const NKOPickerViewCrossHairshWidthAndHeight    = 38.f;
 
 - (void)_updateBrightnessPosition
 {
-    [_color getHue:nil saturation:nil brightness:&currentBrightness alpha:nil];
+
     
+    [_color getHue:nil saturation:nil brightness:&currentBrightness alpha:nil];
     CGPoint brightnessPosition;
-    brightnessPosition.x = (1.0-currentBrightness)*self.gradientView.frame.size.width + self.gradientView.frame.origin.x;
+    brightnessPosition.x = self.gradientView.frame.origin.x;
     brightnessPosition.y = self.gradientView.center.y;
     
     self.brightnessIndicator.center = brightnessPosition;

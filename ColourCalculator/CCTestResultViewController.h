@@ -63,7 +63,11 @@
 @property (nonatomic, retain)NSMutableArray *test3FaceEmotionSuprise;
 @property (nonatomic, retain)NSMutableArray *test3FaceEmotionEngagement;
 @property (nonatomic, retain)NSMutableArray *test3FaceEmotionValence;
-@property (nonatomic,retain) NSMutableArray *timeFrame;
+@property (nonatomic,retain) NSMutableArray *test1TimeFrame;
+@property (nonatomic,retain) NSMutableArray *test2TimeFrame;
+@property (nonatomic,retain) NSMutableArray *test3TimeFrame;
+@property (nonatomic, retain) NSMutableArray *numberOfmeasurements;
+@property (nonatomic, retain) NSMutableArray *order;
 
 @property(strong, nonatomic)NSDictionary *participantTestInfo;
 @property (strong, nonatomic)NSDictionary * testQuestionDic;
